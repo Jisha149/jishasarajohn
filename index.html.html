@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Jisha Sara John — Clinical Researcher &amp; Evidence Synthesis Specialist</title>
+<meta name="description" content="Portfolio of Dr. Jisha Sara John, Pharm D — clinical researcher, epidemiologist, and evidence synthesis specialist in antimicrobial stewardship.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F4F7F1;
+    --paper:#FFFFFF;
+    --ink:#122E2B;
+    --ink-soft:#3C5450;
+    --coral:#E1512B;
+    --coral-dim:#F4CFC2;
+    --teal:#2C8C86;
+    --teal-dim:#D7EBE9;
+    --gold:#EFAE0E;
+    --line: rgba(18,46,43,0.14);
+    --line-strong: rgba(18,46,43,0.28);
+    --radius-lg: 28px;
+    --radius-md: 16px;
+    --radius-sm: 10px;
+    --maxw: 1080px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{ background:var(--coral); color:#fff; }
+
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    margin:0;
+    color:var(--ink);
+  }
+  .mono{
+    font-family:'Space Mono', monospace;
+  }
+  a{ color:inherit; }
+  img{ max-width:100%; display:block; }
+
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---------- background texture ---------- */
+  .grain{
+    position:fixed; inset:0; pointer-events:none; z-index:2;
+    opacity:0.035; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  /* ---------- nav ---------- */
+  .nav{
+    position:sticky; top:16px; z-index:40;
+    margin:16px auto 0; max-width:calc(var(--maxw) - 56px);
+    display:flex; align-items:center; justify-content:space-between;
+    background:rgba(255,255,255,0.82);
+    backdrop-filter:blur(10px);
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:8px 8px 8px 22px;
+    box-shadow:0 8px 24px -14px rgba(18,46,43,0.25);
+  }
+  .nav-id{
+    font-family:'Fraunces', serif; font-weight:600; font-size:15px;
+    white-space:nowrap;
+  }
+  .nav-id .dot{ color:var(--coral); }
+  .nav-links{ display:flex; gap:2px; align-items:center; }
+  .nav-links a{
+    text-decoration:none; font-size:13.5px; font-weight:500; color:var(--ink-soft);
+    padding:9px 14px; border-radius:999px; transition:background .2s, color .2s;
+    white-space:nowrap;
+  }
+  .nav-links a:hover{ background:var(--teal-dim); color:var(--ink); }
+  .nav-cta{
+    background:var(--ink) !important; color:#fff !important;
+    padding:9px 18px !important; margin-left:4px;
+  }
+  .nav-toggle{ display:none; }
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding:96px 0 64px;
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'Space Mono', monospace; font-size:12px; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--teal); background:var(--teal-dim); border-radius:999px; padding:6px 14px 6px 10px;
+    margin-bottom:22px;
+  }
+  .eyebrow .pulse-dot{
+    width:7px; height:7px; border-radius:50%; background:var(--teal); position:relative;
+  }
+  .eyebrow .pulse-dot::after{
+    content:''; position:absolute; inset:-4px; border-radius:50%; border:1.5px solid var(--teal);
+    animation:pulse 2.4s ease-out infinite;
+  }
+  @keyframes pulse{ 0%{transform:scale(0.6); opacity:0.9;} 100%{transform:scale(1.8); opacity:0;} }
+
+  .hero h1{
+    font-size:clamp(38px, 5vw, 58px);
+    line-height:1.04;
+  }
+  .hero h1 em{
+    font-style:italic; color:var(--coral); font-weight:500;
+  }
+  .hero-role{
+    margin-top:18px; font-size:18px; color:var(--ink-soft); max-width:46ch;
+  }
+  .cred-row{ display:flex; flex-wrap:wrap; gap:8px; margin-top:26px; }
+  .cred-pill{
+    font-family:'Space Mono', monospace; font-size:12px; border:1px solid var(--line-strong);
+    border-radius:999px; padding:6px 13px; background:var(--paper);
+  }
+  .hero-actions{ display:flex; flex-wrap:wrap; gap:12px; margin-top:34px; }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    font-weight:600; font-size:14.5px; text-decoration:none;
+    padding:13px 22px; border-radius:999px; transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .btn-primary{ background:var(--coral); color:#fff; box-shadow:0 10px 24px -10px rgba(225,81,43,0.6); }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 14px 28px -10px rgba(225,81,43,0.7); }
+  .btn-ghost{ background:transparent; color:var(--ink); border:1.5px solid var(--line-strong); }
+  .btn-ghost:hover{ background:var(--paper); transform:translateY(-2px); }
+
+  .hero-photo-wrap{ position:relative; justify-self:center; }
+  .petri{
+    width:300px; height:300px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    position:relative;
+    background:var(--paper);
+    border:2px dashed var(--line-strong);
+  }
+  .petri::before{
+    content:''; position:absolute; inset:-16px; border-radius:50%;
+    border:1.5px solid var(--line);
+  }
+  .petri img{
+    width:246px; height:246px; border-radius:50%; object-fit:cover;
+    border:6px solid var(--paper); box-shadow:0 20px 40px -18px rgba(18,46,43,0.4);
+  }
+  .culture-tag{
+    position:absolute; bottom:-6px; right:6px;
+    background:var(--ink); color:#fff; font-family:'Space Mono',monospace; font-size:11px;
+    padding:7px 12px; border-radius:999px; box-shadow:0 8px 20px -8px rgba(0,0,0,0.4);
+  }
+  .culture-tag2{
+    position:absolute; top:6px; left:-18px;
+    background:var(--gold); color:var(--ink); font-family:'Space Mono',monospace; font-size:11px; font-weight:700;
+    padding:7px 12px; border-radius:999px; box-shadow:0 8px 20px -8px rgba(0,0,0,0.3);
+  }
+
+  /* ---------- section shell ---------- */
+  section{ padding:64px 0; position:relative; }
+  .section-head{ margin-bottom:40px; max-width:640px; }
+  .section-label{
+    font-family:'Space Mono', monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.08em;
+    color:var(--coral); margin-bottom:10px; display:block;
+  }
+  .section-head h2{ font-size:clamp(28px,3.4vw,38px); }
+  .section-head p{ color:var(--ink-soft); margin-top:12px; font-size:16px; }
+
+  /* ---------- about + stats ---------- */
+  .about-grid{ display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start; }
+  .about-text p{ color:var(--ink-soft); font-size:16.5px; margin:0 0 16px; }
+  .about-text strong{ color:var(--ink); font-weight:600; }
+  .stat-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .stat-card{
+    background:var(--paper); border:1px solid var(--line); border-radius:var(--radius-md);
+    padding:20px; transition:transform .2s ease, border-color .2s ease;
+  }
+  .stat-card:hover{ transform:translateY(-3px); border-color:var(--line-strong); }
+  .stat-num{ font-family:'Fraunces', serif; font-size:34px; font-weight:600; color:var(--coral); line-height:1;}
+  .stat-label{ font-size:13px; color:var(--ink-soft); margin-top:8px; }
+
+  /* ---------- PRISMA signature section ---------- */
+  .prisma-wrap{
+    background:var(--paper); border:1px solid var(--line); border-radius:var(--radius-lg);
+    padding:44px 36px; position:relative; overflow:hidden;
+  }
+  .prisma-note{
+    font-family:'Space Mono', monospace; font-size:12px; color:var(--ink-soft);
+    background:var(--teal-dim); display:inline-block; padding:6px 12px; border-radius:8px; margin-bottom:28px;
+  }
+  .prisma-flow{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:0; align-items:stretch;
+  }
+  .prisma-stage{ position:relative; padding:0 14px; }
+  .prisma-box{
+    background:var(--bg); border:1.5px solid var(--line-strong); border-radius:var(--radius-sm);
+    padding:20px 18px; height:100%; transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .prisma-box:hover{ transform:translateY(-4px); box-shadow:0 16px 30px -18px rgba(18,46,43,0.35); border-color:var(--coral); }
+  .prisma-kicker{
+    font-family:'Space Mono', monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.05em;
+    color:var(--teal); margin-bottom:10px; display:block;
+  }
+  .prisma-box h4{ font-size:16.5px; margin-bottom:8px; line-height:1.25; }
+  .prisma-n{ font-family:'Space Mono', monospace; font-size:12px; color:var(--coral); margin-bottom:10px; display:block; font-weight:700; }
+  .prisma-box ul{ margin:0; padding-left:16px; font-size:13px; color:var(--ink-soft); }
+  .prisma-box li{ margin-bottom:4px; }
+  .prisma-arrow{
+    position:absolute; top:50%; right:-11px; transform:translateY(-50%); z-index:5;
+    width:22px; height:22px; border-radius:50%; background:var(--paper); border:1.5px solid var(--line-strong);
+    display:flex; align-items:center; justify-content:center; font-size:12px; color:var(--coral);
+  }
+  @media (max-width:860px){
+    .prisma-flow{ grid-template-columns:1fr; gap:28px; }
+    .prisma-stage{ padding:0; }
+    .prisma-arrow{ top:auto; bottom:-24px; left:50%; right:auto; transform:translateX(-50%) rotate(90deg); }
+  }
+
+  /* ---------- timeline ---------- */
+  .timeline{ position:relative; margin-top:12px; }
+  .timeline::before{
+    content:''; position:absolute; left:15px; top:6px; bottom:6px; width:2px;
+    background:repeating-linear-gradient(to bottom, var(--line-strong) 0 6px, transparent 6px 12px);
+  }
+  .tl-item{ position:relative; padding-left:52px; padding-bottom:40px; }
+  .tl-item:last-child{ padding-bottom:0; }
+  .tl-dot{
+    position:absolute; left:0; top:2px; width:32px; height:32px; border-radius:50%;
+    background:var(--paper); border:2px solid var(--coral); display:flex; align-items:center; justify-content:center;
+  }
+  .tl-dot::after{ content:''; width:9px; height:9px; border-radius:50%; background:var(--coral); }
+  .tl-item.current .tl-dot{ border-color:var(--teal); }
+  .tl-item.current .tl-dot::after{ background:var(--teal); }
+  .tl-card{
+    background:var(--paper); border:1px solid var(--line); border-radius:var(--radius-md); padding:24px 26px;
+  }
+  .tl-meta{ display:flex; flex-wrap:wrap; gap:10px; align-items:baseline; margin-bottom:6px; }
+  .tl-role{ font-family:'Fraunces', serif; font-size:20px; font-weight:600; }
+  .tl-date{ font-family:'Space Mono', monospace; font-size:12px; color:var(--coral); background:var(--coral-dim); padding:3px 10px; border-radius:999px; }
+  .tl-org{ color:var(--ink-soft); font-size:14.5px; margin-bottom:14px; }
+  .tl-card ul{ margin:0; padding-left:20px; color:var(--ink-soft); font-size:14.5px; }
+  .tl-card li{ margin-bottom:7px; }
+  .tl-card li::marker{ color:var(--coral); }
+  .tl-sub{ margin-top:14px; padding-top:14px; border-top:1px dashed var(--line); }
+  .tl-sub-title{ font-weight:600; font-size:14px; margin-bottom:8px; }
+
+  /* ---------- publications ---------- */
+  .pub-list{ display:flex; flex-direction:column; gap:2px; }
+  .pub{
+    display:grid; grid-template-columns:44px 1fr; gap:18px;
+    padding:20px 4px; border-bottom:1px solid var(--line);
+  }
+  .pub:first-child{ border-top:1px solid var(--line); }
+  .pub-num{ font-family:'Space Mono', monospace; color:var(--coral); font-weight:700; font-size:14px; padding-top:2px; }
+  .pub-title{ font-size:15.5px; font-weight:600; line-height:1.4; }
+  .pub-meta{ font-size:13.5px; color:var(--ink-soft); margin-top:6px; }
+  .pub-tags{ margin-top:10px; display:flex; flex-wrap:wrap; gap:6px; }
+  .pub-tag{
+    font-family:'Space Mono', monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:0.03em;
+    background:var(--teal-dim); color:var(--teal); padding:4px 9px; border-radius:6px;
+  }
+  .pub-tag.gold{ background:#FBEBC4; color:#8A6300; }
+  .pub-link{ font-size:13px; color:var(--coral); text-decoration:none; font-weight:600; }
+  .pub-link:hover{ text-decoration:underline; }
+
+  /* ---------- guideline cards ---------- */
+  .guide-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; }
+  .guide-card{
+    background:var(--paper); border:1px solid var(--line); border-radius:var(--radius-md);
+    padding:24px; transition:transform .2s ease, border-color .2s ease;
+  }
+  .guide-card:hover{ transform:translateY(-4px); border-color:var(--coral); }
+  .guide-icon{
+    width:38px; height:38px; border-radius:10px; background:var(--teal-dim); color:var(--teal);
+    display:flex; align-items:center; justify-content:center; font-size:17px; margin-bottom:16px;
+  }
+  .guide-card h4{ font-size:16px; margin-bottom:8px; line-height:1.3; }
+  .guide-card p{ font-size:13.5px; color:var(--ink-soft); margin:0; }
+  .guide-card .yr{ font-family:'Space Mono',monospace; font-size:11.5px; color:var(--coral); margin-top:12px; display:block; }
+
+  /* ---------- skills ---------- */
+  .skill-groups{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .skill-group h4{
+    font-size:14px; text-transform:uppercase; letter-spacing:0.04em; color:var(--teal);
+    font-family:'Space Mono', monospace; margin-bottom:16px; font-weight:700;
+  }
+  .skill-tags{ display:flex; flex-wrap:wrap; gap:8px; }
+  .skill-tag{
+    font-size:13px; background:var(--paper); border:1px solid var(--line); border-radius:999px;
+    padding:7px 13px; transition:border-color .2s, transform .2s;
+  }
+  .skill-tag:hover{ border-color:var(--coral); transform:translateY(-2px); }
+
+  /* ---------- honors / certs ---------- */
+  .two-col{ display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+  .list-clean{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:14px; }
+  .list-clean li{
+    display:flex; gap:12px; align-items:flex-start; font-size:14.5px; color:var(--ink-soft);
+    padding-bottom:14px; border-bottom:1px solid var(--line);
+  }
+  .list-clean li:last-child{ border-bottom:none; }
+  .list-clean .lbl{ color:var(--ink); font-weight:600; }
+  .li-badge{
+    flex-shrink:0; width:26px; height:26px; border-radius:50%; background:var(--coral-dim); color:var(--coral);
+    display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700;
+  }
+
+  /* ---------- footer / contact ---------- */
+  .cta-section{
+    background:var(--ink); color:var(--bg); border-radius:var(--radius-lg); padding:64px 48px;
+    text-align:center; margin:0 auto;
+  }
+  .cta-section h2{ color:#fff; font-size:clamp(28px,4vw,42px); }
+  .cta-section p{ color:rgba(244,247,241,0.7); max-width:52ch; margin:16px auto 32px; font-size:16px; }
+  .cta-links{ display:flex; flex-wrap:wrap; justify-content:center; gap:12px; }
+  .cta-links a{
+    text-decoration:none; font-size:14px; font-weight:600; color:#fff;
+    border:1.5px solid rgba(255,255,255,0.25); border-radius:999px; padding:11px 20px;
+    transition:background .2s, border-color .2s;
+  }
+  .cta-links a:hover{ background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.5); }
+  .cta-links a.primary{ background:var(--coral); border-color:var(--coral); }
+
+  footer{ padding:36px 0 48px; text-align:center; }
+  footer p{ font-size:12.5px; color:var(--ink-soft); font-family:'Space Mono', monospace; }
+
+  /* ---------- reveal on scroll ---------- */
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:900px){
+    .hero{ grid-template-columns:1fr; text-align:center; padding-top:120px; }
+    .hero-photo-wrap{ order:-1; margin-bottom:12px; }
+    .hero-actions, .cred-row{ justify-content:center; }
+    .about-grid{ grid-template-columns:1fr; }
+    .guide-grid{ grid-template-columns:1fr 1fr; }
+    .skill-groups{ grid-template-columns:1fr; }
+    .two-col{ grid-template-columns:1fr; }
+    .nav-links{ display:none; }
+    .nav-toggle{ display:block; background:none; border:none; font-size:20px; padding:8px 12px; cursor:pointer; color:var(--ink); }
+  }
+  @media (max-width:600px){
+    .wrap{ padding:0 18px; }
+    .guide-grid{ grid-template-columns:1fr; }
+    .petri{ width:230px; height:230px; }
+    .petri img{ width:180px; height:180px; }
+    .prisma-wrap{ padding:28px 20px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .reveal{ opacity:1; transform:none; transition:none; }
+    .eyebrow .pulse-dot::after{ animation:none; }
+  }
+
+  :focus-visible{ outline:2.5px solid var(--coral); outline-offset:3px; }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<nav class="nav">
+  <div class="nav-id">Dr. Jisha Sara John <span class="dot">•</span> <span style="font-family:'Space Mono',monospace;font-weight:400;font-size:12px;color:var(--ink-soft);">Pharm D</span></div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#journey">Journey</a>
+    <a href="#experience">Experience</a>
+    <a href="#research">Research</a>
+    <a href="#guidelines">Guidelines</a>
+    <a href="#contact" class="nav-cta">Contact</a>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero wrap">
+  <div class="reveal in">
+    <div class="eyebrow"><span class="pulse-dot"></span> Chandigarh, India — currently screening evidence</div>
+    <h1>Turning messy clinical<br>evidence into <em>guidelines<br>people can trust.</em></h1>
+    <p class="hero-role">Clinical researcher &amp; epidemiologist specializing in antimicrobial stewardship and evidence synthesis — from bedside pharmacy to WHO guideline rooms.</p>
+    <div class="cred-row">
+      <span class="cred-pill">PHARM.D.</span>
+      <span class="cred-pill">MBA (Hospital Mgmt)</span>
+      <span class="cred-pill">FASCP</span>
+      <span class="cred-pill">Cochrane Member</span>
+    </div>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#contact">Let's collaborate →</a>
+      <a class="btn btn-ghost" href="https://orcid.org/0000-0002-9025-9678" target="_blank" rel="noopener">View ORCID record</a>
+    </div>
+  </div>
+  <div class="hero-photo-wrap reveal in">
+    <div class="petri">
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEA3ADcAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCADkAOMDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDxDyjSBMVdMdRMmKzuVYhAxUqLk0zvUyHFDETRpyKsqoqFDU6kYFQUPAxTgaZmnZGBQAuaeqng4z7etEUTO+B0HU+lSSSRxsUTBPqO1FrjsPjiyMsdo9ae00FvyByBzlhVJpSGLBmZ8c5bp/KqUs5LkmQA+hOatQE3Y0Z9Tt1kLbGZeh2qP61PBqVpNMqq3ljPKv17f5FYHnKANsrE+meP61GZFIO6PIBzkHOKvkRPMdoIGZTgq2B/C3Xn0qrcxlWbIGM9jmuet724g5Ri6dBW7b6n9riEUwUSEAhsfe4qHS7BzFYgg1JGu7rTgqu+AfwxUyx7ayatuWhu0YqCQ7c1Zc4Bqq6Me1JAVnbNQvUrqQTUJBJrSJIzGTip7e3YHdmlitwTkmreFRetNsLCmTYmCazrh1Y8U+7uFAIBrLaQknk0lEY6RQaixSgk96WrJPs3wR/yIPhz/sF23/opaKXwR/yIPhz/ALBdt/6KWiqEfIxh9qiaA1f2U104rl5jblMt4sdqjA5q7KmM1Ufg1pF3IaHq2KlV6rA05WqmhXLYerVtEZGB5xnkjtVS2hkuJljRck/oK07qZbOIQQAM/TPv60rFRV9RLyVI8RxsFXqQOuTVNs+WWI2469sfjSpCIEaS4GZGOemcUwlnUyz/AHByQeg+gq0gbK8rgqWeTagHAHT6c9aotIPurE5xzuY4/Sppy8x8122IB8oH9Kp7nGeVHszc1okZsnDjOZEOMfeBzilERIDKcjGNw6iolYkjK8/SpowSRsznPanewhyspPI+9wcd6nhlK8FvunIY+n/6/wCVNGm3D/dQkeoFNms54jsKkEHFHMHKak8oZY5Vf9/z+VPtNREvyOdsg/WsgzyKEQABgR1+lP8ALcssmQX7hOfzqZxUhxbR0ceGfmrLRKR0rEs7vBVXP0JrZSQlOlck4uLNoNMo3UAHNQLbhugq/NG0nOKWOMp24oUtBOOpCtuAMkc1WugqpgE1pSNhazLllJNJN3HZWMSfJc56VWOavTqM1XKCuhPQzZCp5qVRmnCIGpEjxTuI+x/BP/IheHf+wZbf+ilopfBf/IieHv8AsGW3/opaKoR8pZprEEU0McUhziuTlOi5BKapOOauSc5quwrSOhmyHbSqhJAAqTbV7T0jjZp5DxHgj61VyUrs0raH+zLcoP8Aj5lXLHuq8cD0pEtljJuHAz/CrflmoLR2mle6ugSrHdyOvt+o+ufrV+WQvC00gCxdET0Ht/ntTRt0MW6lV3BxuLH5Vx1qnkvIE3788kdsevt6D+fNSTNud2OQ36g5/wA/nVF7lROF5O44bA5x6D0FaGT3JNQlLFVywiTvnG4/5/nVGHLttSLd+NSyBp5di9PSt7TNOVQDjmk5WCMOZlG20mWYY2BfpW/pfhks4aQnb7962bO0VAMitqAKq4A4qHNm8aSHWmkQKgG0dPSm3nh2GdP9WD7gVdiYjpVxGLLg1NzXkPMdf8Puib4V27BgYrjopJEcxsxUjgivd76ySeJxjqDXjviXTTYai2F4J4q6c76GFanbVFWOfYwGRj1BrodOvA8eGOTXJOTtDgll756g1csbry2AJ/OqnG6ME7HcLtZM9aaVAzxVS1uS6CrJYkVxy902WpWm5yKzpk61qOtUph1oixtGROnJqttPpWhKmWFWLeyD4JFbqVkZsyE+lSKOa2JrAquQorOlhKN0o5riPr3wZ/yIvh//ALBtt/6KWijwZ/yIvh//ALBtt/6KWitSD5MXihqdtpCtYmjIGHFRFO9WWT2pojPT1pgQKvIp8o3gQ7toJ+Yjv/nmpkiJcDFSLbNHetwMx5yWPT/OaaHHcvW1t5xCuCAoyeOfp/np1qvq1+N5VG2ov8VaUpWwsDLuXcRtwMZPv/P/ACK5OR5Jpd7AEk5UHpn1PsKqJc3ZWJ5WjS3lZsiQqoT2zWHgmQsOfer1w5CJEWyc5LepqDyx5gUdhmrMOpf0yHe5Y109kmGwK57TMKT+ZNbsWo2tv95/0rJq7OmDUVqdFbLuArVgQBawLPVraRfllGfQ8VqxXaFBzS2NU7mpGULYzyPer8JTgE1hCcJlqzbzWbkNstzz/exSuhtNHayRBlJVh9K80+IVqI4Y59vKvg/StO1OoNJ5st0WHXHpUHihpdR0WdXjBdFyHHfH9aFZO6Jd3Fpo8x8zYxzgjoR60LgHg9OlRNyM/hRG5BHNdBxHTabcfKoJ59TW9EwdAa460mMci84BP5V1FlOJBx3/AM/y/ka568epdN6k0lUp881pOmRVKdM1zxNpbFBULtWtZJtUZGaqwRAn3rWgiwtaNmLQTmMRkbawbwKScDite6cqDWHcy8nmnFCPrTwZ/wAiN4f/AOwbbf8AotaKXwZz4G8P/wDYNt//AEWtFdJB8sCLPak8irwjpwjFcnMbWKBgpPs/tWj5VKIgGBx+FPnCxBYWYkvI9w4HJHrimSRyHVg33Yw245Pbpn9K09PBjndsZOwjJ7Vzmp3ZW5MaSAM6rHlT0GW/pitIbFKyJNWukunABHlxthcnt+Hb/PWsKacNPiJM8cnHXH9PStG6BkISILsjUKSMgFu/1/8A11lXTJDuCn5z7VrEiRXPzyBc9+Se5NTIcsTjrUMOG3MQ2AOeatW6iSUAVT0REdWXbW3LKQzbV64HU1oRxWicOFz6Hk/lVV4plX5Bgepqt/Z1xKpDS7cnnFZb7nTZLZXNhFtQ4KHa3YlSv861LS55Ee78Kw4LGGKAw5XeTneqnd9Ota9jZOjoWLbhxyOamS8zSEn1R0QikWwd2UkAZzXIapqr2r4AIHQkCvUtNtFu9NZGUfMlcfqnhWTz5ZIrdJNx+YMM/oeKSVnqVKTasjF0vW5pI2fbdfKQvy7XBP8Au4B/KumtYZNRtZA0ciB1IIZNv6VW0rRbpHVRbRxKD1A/+tXd2Gk/utxbnHPvTauKN4qzZ8531nJZ309s6kNG5GD9eKojGcV3vxO0oWGtxXaABLlCDgfxL/iCPyrgxyTW0XdHFOPLJouBiVB9q29Juj5yKTx6f5+p/OsGInGPSrdrI0MgI4KnilPVWFHc71FDoM8kjtVee3JHHWrFk4KD0zxVwxBua4nozfcxY49jciraygLirE1uAM4rNnyh4zVLUnYLhwwIrGnQFjV4szGoXiJrWOhDPq3wbx4H8Pj/AKhtv/6LWil8HjHgnQR/1Drf/wBFrRXQjM+aRTsiq/mU4PmuCx0IsINxx270ryIi4LAZ5I9arNKVRgDjPes2a68rO5sc/iauELhext6XqMS6ksUq5Eg2kn+Hiuf8QW8VproRvniCbhtPHJP6VDFcCWQ5cKoPSk1NSfJvJQfLDbGIPzbT0PT/ADmuhKwr3JLq5VnYR4Hy5AA4A9Pr0rn3QluvvnFXbi8tyjCJGwRg7gATWdPMz9T9atIzkxskwUbE+ufetDSQXmrGIOTmtrQziYE0S2HT+I7awtUlUB1BrYXQ7KVctCufpWdpsoVa3IZ+Kw5rHcqdyqdPsrMF1jVcc5xUNtOtw5lji/dZwGI60anJ9ozCrcD71ZcF+9hH5JB2joQKOa43C2h6RocyxFE6A1e1qOSCB7u2jRxGNzqeMj2rz/T9cLkbiV2+vFb0etz6nDJGinYo2gk9afMrWGqdtblm01qC4AZECt0K1v2upptwV7ccV51eL9jnEsOf9pfWtjT9SEsSkN1qOdrcv2SlqjE+L22XRLeUDBF0B+G1q8fA5Ner/EyUzeHI/QXC/wAmrykdvpW9J3icGJVp2J0I2A96mHG0852kfX/IqugJYKKtdXRV/vEY/KqZkjvNFPm6fEx6la0GfY2KpaAgTT8Kcje2PpmtKSIsQa4JStI6ErojYhlxVC4hU1cdWT6VXkbNNO+wmjLaMq1ATNTzAZyKiU4NbLYzsfUXhQY8HaIP+nCD/wBFrRR4V58IaL/14Qf+i1ordbGR8tbqUNTBSgVz2Nh1wrC0WQKDliBzWNcQM7Zdsk/lW40n7lYu/Ue9VbqEeUzKfnLfKew9f8+1XF20DczbdVgjbdgAH86S/v8AzIPLJHoR69Kmexkib96+R1XacqfQ5rKnVGdm5KqeB69/5VqlcmTsV/KLQEnoG/z/ACqF14A7nmrysP7PcBefNUsSO2Dz+dVph827qOtWjNopuvGa0tGbEoFUpBz7H9KksJfJuh6ZpSV0ODtI7yzmIwDWv9pZLclRzisWzxIisDWxa7WBiboeK45bnq03oZLajGhzJIBuOeTyaRryGVcpG7A8Zx3qrNoW67M0f+sRgQD0PtXQ6XqMNnEIriyXcJA/BAHTBNaWstDFyu9UULa1Scofs0zbjgAZ5NdNaQ6tbxkW+n+XGuVIZccgZx61s6frNkLBUS12lH3rkrgc59fSrF1rUl2zxwkKjMDhBlumOvSjlGpSeyPNLzXb2/urq3+w7BE5QyA9CDz+tdFpcDJGCf4jmteXRII7STYn7x+WPXJpttCIolRv4RWc7dDale+pyvxG+Tw5Andrhf8A0FjXlv8AEPpXcfETUhc6jBZRtkQKWbB7n/6w/WuLK8iuikrRPPxMr1GSRsIznvjFXtLiLXSyBN7DlV689s1USBtwO2u10q1jgtU8vlmwWOKKjsjOKua+mQLbadFGeSBk/U9avBhtxmqAlwBTHuginHWuJxubp2LczKAayrh+eKHu89TVWSbNVTi0OUkxGf1poeomekVq6EZM+qvCnPg7RP8Arwg/9FrRTfCZ/wCKN0P/ALB9v/6LWitjE+WxTu9Npw6VztGlwbO5WHVSD/8AWpZAjwlQjOcHHp+NPXt8ufWrEeDGEJPoAKEXE5HUIrqJvLM+IgucDPHsPU1QhBkDhWOETlmI4Gcfj2/yK6HU/IuorjIP7rATB68dP8//AKudCDPzAjjHXv8AlXQjNrUtwLuj+Qg787uMcDFVWV3lOBxwP5CpmuAqfZ0zsA+YD+93qLzDjbznJPt/n/CmhMrkjp2NMwQwI6ip5REY0KthuQf0OahDDrnimQdNouo5VVJ5HFdGk/zKwPFecwyPbzB1P/166ew1ITR4Jwa56kLandRqpqzOsyHYOvVutSrFu4ZAwrFtb7b8jn6GtyyukkXaTzUo16lq3t0wdkdbFlBIpBCBR9Kr2pjVByPpWnBcwqxwefrRaPcvmn2LhUJBknmuX8Ra1BpFhLcORkDCLnlm7CrHiLxHaaRZtJLIAT0UdT9BXjWsa1ca3fefOdqLxHGDwo/x96ShzPyInV9mvMq3NxLeXMlxO26SVtxNKq8g98UxVzgAVZCqe+Oe9dXSx5z3uzorG0S8sUVPvgc5/lU1hcGCUxNwwOCDWfot8bSXymOUJ4rVurfzT9oi+/nOaxas7PYq+l0XHkJBqs5JqRG8yMHv3+tIV4rDZ2KvcgINRMKslajZKpMCsaBUvl5NKYTirTA+pfCP/ImaF/2D7f8A9FrRR4S48G6GP+ofb/8AotaK6EZHy4BT0XLAUKvHFTwbY5QzdAcHFc5aGnI6fXinK2yMvnDE4BHrUjBI2DFlEZ5yf8/pWZqE8ckRt1cAt1OR6cU4q7LvZXM3VLKfTryaG4CAOA27d0zzj9f51QuolFvGAU9QQc/hSwiScOjPuCnjntkVFdbA4iDnKMQ3A6itjPfUosCoBHQ56mhZuDgfNinTsu/Ab8cVCWVQcHJqibjXJJHPPtQp6+gplPK4oESowIwetW7Y4cdjVJQeo5GasoT8pH1xSeqsVF2dzoraTOFc8+hrTgLxkGN+fQmq2mGO6tE81RkcHIrWi0+LOV4+hrjnoz1KSuky3BqEqqAUz7g0+bVJwpKKA3r1oiso165I9M0lxEAhwMCs7nQ07HC+JJZri4Dyuzse5rERcjNdBrsW5+OMGsb92uAPvD06120/hPJr/Gx8a47c9qdICo3cEY5psZPJP5UpmHRhx7dasxEiuVRwCTjqMdq6nTbszQ7R1rj5Ihv8xD8p61r6FcMLwIOmKmauhJ6nWRQ+Wp68nNLsJXOMcdKnjG8Ajv0p+yuN6s1sVDHUbR+1XTHUbR80FJFVI+elTeXx0qQJTj0qiWfSPhbjwjoo/wCnCD/0WtFL4X/5FLRv+vGD/wBFrRXUtjI+YVWmu4jUk56dAKmUZ4pZrdETzXYEKDnI49hz1rKMbmmxmy+dLcfZ8qsZ4Yg88jIP4fyP1xiasj2+qENIA20E5B6Y4PH+c108KI7SXOB+6YbQe4AUc1i6/D9t1dXYKPl2e2dzYBx65xn8a2SsS2ZnmLHHIyKcdD7Z/wAgg96qXybZ/MDA8biB/DnnFbFxbJ5MaKFCkbS23H8R45HpWRdI0V1LHuJKEqMDHcYpiKjBmAI5B9qYF5AapCWGDnge350uS2R8pwO1MkjMWB1BHtTjyoxSeYPwpcg/dNMB3VDjrViDnZnpilggaYAAY55OM4p7YjIVhgrmobNEtDqPC674nBHG7p+FdWlsnB2Cub8LIVs1cDcGPau0ghDrwDXHU+I9ShbkRHHAoXO3mql6uFPpWyLfA71nXlq8pIA49TWa3Nm1Y8+1cb5TxwKx2gjuPLCgJKTgns1dnqWnbM8ZJ61yl7bNbuHA4zXZTeh5daOtzNlSW2nMTghh1FDHd161JJM9zMWk5YDANNcYRe2TxWpzMla2aG2WQcqw6Yo0+Ux3qOvTpT2YiMIxOAPWqSStDIp7g9aVtBrc9Ks3DwJ/u1ZIrE0i8iEK75RkgYraVgygg5FcsoOLNk0xCabwaeajIpFWFIFJsyaSpEPFMTifRnhkY8KaOP8Apxh/9AFFL4a/5FXSP+vKH/0AUV0rY5z5pkiMTi3fiV16ns3X9Kg1m88uyZFGGlcorf7IIP8AMcUk0xnnlnlY7nc7G/ugcZ/zjpWFfSme5EQwFXAA64FOKLkW5rryNPUA4ZvlYD8zWa95ImyYu29HByMen/1qjupQCVToDVdwSrADPAY/mK0MzQuGMyomWcqqsGwckEc/yFUdSC/bZJAAVL8/lUkDM4V2YhsKDx05/wAKZdp5lztVQRuyAKQFdlAiPyrlj24746j6VUIAueDu+o4K/wBePoa17kJFAyAAgdiPQk9eveq9vC0zs8oVgOHz356/r/noUBknOeQMHvjpT4l/fAMcc4J9KvTWscgBiPJ7VCiQNJsn3xknG8DIA9xQNF5LqC2t/lOXUjAHeqz7ru4YqDgkdBz9B69a6Ww8Ew6nCkkWoMcjhgAVrqdI8AW1pKsjzvIRnDAYPI/T8OfesnJI3UJSIfCmkyQ6eAyMuDzn1712VtblFGRVy1sY4YlijQKijAA7Va8jb2rnlq7nbF2ViqYQV6VTmt9wxitnYNuDUDwgnpS5R8xzN1piuCcc1x2u6S4Rgq/pXqb22R0rLutKWYlmHFaR0MpJSPDZ7eS1DGVCDmqpkLlWx0rrPGiwQ3gtIyCwO58dvQVzAjwK6Y3aOCdk7IaXbaTioRC8kmMcGrioKehVSAeMVdiLl62JWNVPVRitO0vpLZuDuXupNZCTAHIYZpzXYAxIhBz1qmk1ZkXd7nbwyrPCsi9GFK4rF0G+R0Nvu5HK8/pWyTXBOPLKx2QldXGUbttFNfvQlcdz6S8MHPhTRz/04w/+gCik8L/8ilo3/XjB/wCi1orpS0Oc+ULrUFMEk5GHICBd3Q9/8KxJLk7yQxyak1FysghydsQ5+tZqEvIW4qojk9SyzH5RjAHNBY+RJnJ3YGB35pmSR1x9DSvxGQuM8HjtVkEscwDEZyqrj68VNBua+WXg4O4EDg/54qih8sqD1ByfxxV+0ZgzR9CG49+KQyO9JaNsH7uRz3p1lIuIu2flBPSkk2zO6HoRgcelVLchCQeRg9aGBdkjRizoeWPA/wA/hVeeEHYc/e71YjcAgHOKZcc5A4VTx7UJAxlle3uk3BktLiSF887Tw31B4P4122lfE6eBFTUbBJhxmSFthx9DkE/iK4g4aMEj5uhwO9RcHBB4980nBPcFUlHZns1l8SvDkwIla5tsf89YSc/985rRTx14ZlwF1RAf9qN1/mK8IxjtmjGP4ePoKl0omixEj3oeNPDhU/8AE0h4Ge/+FNbxr4cBH/E0h59Ax/pXhI5PCtRnHrS9kg+sS7Httx498ORBgt95hA+6kTnP6YrkNc+IslxGYtJgeLcOZpgMj6AZH4n8q4LAGcg04DIJ24/CqVNImVaTGSu8zs8pZnY5ZmOSTSqRznpSj0Jxj/Pelxk9AcVoY3FAHQflmneTznnHcUzywT0+nakw6YK7v50APeEMDg4PpSAOFxvBHo1ILmUcHa2OxoNyCPng49VNAEtm7W9wHT5SDmu1t5hcQJIP4hXEwyRNJ8mQfQ10Oh3H+sgPb5lrCtG6ubUnY2wOKZJ0p4ao3PNc6N2fSPhf/kUtG/68YP8A0WtFHhf/AJFLRv8Arxg/9FrRXUjnPi27kMnHHqefyqAfJGAOpoMgZjxxnimsdze2KpCZKhCqGIOewpS2FGDzkZqJmy3PToBTpGKBvbIFMQKQXOPw/OrCzYnkcc/McVSU45p8bZz9c0DL8p+cOOnXiqhPlTMvbPb0qxEweBkP3l5qtMP3mfpQBOr4PvmiVi3T0qBWO7r71IeeaAHocR4zmm52kEdcU7dgrjk8fjUZkC4BIBPY1RDH4Uknpke9L1UZ47CqxuUHQE4/KgXhABCfhmldBZlofe44PfFSAAnJxjuKprdSE4A49QKctw7AktgDg8dqdxWZaGdoBI6dsU4gj7o571VFw2A5ICHvz61KspXAb77HA96AHnn72AOx9KQlSOTg05ZAzbSMeoB5H605QjHKlcZ6imIZtAA3jKnoV4pRzyj7h0OcUFGGTgjPof8AGmGQIfmQhumcUhjmLLw+1s/p7UoVXGFxnuKaJC3COhHYGm7lQjC4PGRj/PFAEoUCYEcGrlnP9nvY37ZwfpWc7Pt39gcVOW3KreozUyVy4ux26/MOKa6HFV9MuBNZxPn5sYP1q8cY5riejOlO59GeFv8AkUdG/wCvGD/0AUUvhj/kU9H/AOvGH/0AUV0J6GDPiLhQCevpSDr/AI00AluetP8AU4rQQgJ3Z/yKWdzvI7UmaZK2WBoAdkbMd6WAj5xx/hUYPBpUOCT2oAtwyYcY60254c88A5yKiRvm9/Wnz52jJ7f5/lRcBobLfWpwMxkZxmqqfdH0qfOIwcdOaEAkjtJFgD8TUSqGLbznHTnrUzuAAu0HHvjFKxVuGzt6Z/yaokYikcbF3Djgf404FgnCrv7kLQ8sGeWyQcggdKb58WMrGzHpk8UCEZ2DBggx3+Uf5FBuJQNu0bccfKKDcPyRCoye9Hmy4A2Lx/sigYfbpSQSoO3pxT11AggmEccZBNR75gRjgj0ApfMuB/Ew/KkFkTLfRnO5XB5wSM4/z7077TCQNpQc/MCMZ9T9ahV7ogAMSF5GcHFSK93ksFjY98rTuKxZWVTt2t0HA7fTrSq8Uyg5HPA7c1TJYDDWq59V60pkhOQyyx5HQjcP1p3CxLLAy8g5P50wTEZQk59j/jSx3LKQRNu3fKVzSsqOgwArdwOnuOaVwEZ9yHJzxwcc1JbyF4Qp7cZqpISiMOeOMelT2zFYtqiobLijo9AuMLLET0O4VtPNgda5LRp2W8Td/ECproJmO04rnqLU1i9D6i8LHPhHRT62EH/otaKZ4S58GaEf+ofb/wDotaK1WxmeBp8K9DLf8fWo/wDfxP8A4ikPwu0Pp9q1DH/XRP8A4iiitBCH4W6J/wA/Wof9/E/+Iph+Feh4/wCPvUf+/if/ABFFFIAX4VaFj/j61Hr/AM9E/wDiKUfCvQ93/H1qHT/non/xFFFADx8LNDDf8fWocc/6xP8A4ilk+FuiFB/pWodP+eiev+5RRQBGvws0P/n71H/v4n/xFT/8Kv0Q/wDLzqHH/TRP/iKKKaBkZ+GGiKvy3OoAnv5if/EUn/Cq9DflrzUj7ean/wARRRTEO/4VVoQ6XOocf9NE/wDiKkHwv0Nelxf8nH304/8AHKKKZLHj4X6IFJ+03/8A38T/AOIp3/CsdEwf9JvuP9tP/iKKKYgPww0RSCLm/wCR/fT/AOIp3/CstEJ5nvvT76f/ABNFFACr8M9GGF+03+Ov+sT0/wB2kT4Z6L94XF8CB1Eif/E0UUAL/wAK10Zjzc3/AE4/eJ/8TSn4b6QYv+Pq/wAD/bT/AOIoooAgk+GOiSAFp74kj++n/wARUP8Awq7REkOLvUMDsZE9f9yiipZaCT4XaKeDd6jjP/PRP/iKlT4YaKF4utQ/7+J/8RRRUspEtv8ADPRo5Y2W6v8AII/5aJ/8RWy3gHSimPPvP++1/wDiaKKyqFRPYtDt0tNA062jJKQ2scaluuAoAz+VFFFaLYk//9k=" alt="Portrait of Dr. Jisha Sara John">
+      <div class="culture-tag">n = 9 yrs experience</div>
+      <div class="culture-tag2">est. 2016</div>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about">
+    <div class="section-head reveal">
+      <span class="section-label">01 — Abstract</span>
+      <h2>The short version</h2>
+    </div>
+    <div class="about-grid reveal">
+      <div class="about-text">
+        <p>I'm a <strong>Pharm.D.-trained clinical researcher</strong> who spent nine years moving between the ward and the writing desk — dispensing medications one year, drafting WHO guideline chapters the next. My throughline is <strong>evidence synthesis</strong>: taking scattered trial data, stewardship logs, and clinical questions, and turning them into recommendations that clinicians can actually act on.</p>
+        <p>I'm currently a <strong>Project Research Scientist III at PGIMER Chandigarh</strong>, reviewing evidence for national antibiotic guidelines and training the next generation of guideline developers. Before that, I built and ran an antifungal stewardship program at Christian Medical College, Vellore, and co-authored WHO's global recommendations on echinococcosis and meningitis care.</p>
+        <p>Off the clock: I'm the person who read the fine print on 3 systematic review software licenses so my team didn't have to, and once got a "Best Oral Presentation" award for explaining a meta-analysis with enough enthusiasm to win over a room of skeptical epidemiologists.</p>
+      </div>
+      <div class="stat-grid">
+        <div class="stat-card"><div class="stat-num">9</div><div class="stat-label">Years in clinical research &amp; pharmacy</div></div>
+        <div class="stat-card"><div class="stat-num">15</div><div class="stat-label">Peer-reviewed publications</div></div>
+        <div class="stat-card"><div class="stat-num">5</div><div class="stat-label">National &amp; WHO guideline contributions</div></div>
+        <div class="stat-card"><div class="stat-num">4</div><div class="stat-label">Pharmacist cohorts mentored in stewardship</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SIGNATURE: PRISMA JOURNEY ===================== -->
+  <section id="journey">
+    <div class="section-head reveal">
+      <span class="section-label">02 — Methodology</span>
+      <h2>My career, screened like a systematic review</h2>
+      <p>As a systematic reviewer, I've built more PRISMA flow diagrams than I can count. Here's one built out of my own record.</p>
+    </div>
+    <div class="prisma-wrap reveal">
+      <span class="prisma-note">Fig. 1 — PRISMA-style flow diagram of career records, 2010–present</span>
+      <div class="prisma-flow">
+        <div class="prisma-stage">
+          <div class="prisma-box">
+            <span class="prisma-kicker">Identification</span>
+            <span class="prisma-n">n = 3 degrees</span>
+            <h4>Foundations in pharmacy</h4>
+            <ul>
+              <li>Pharm.D., National College of Pharmacy (2010–16)</li>
+              <li>MBA, Hospital Management (2018–20)</li>
+              <li>Fellowship in AMS, FASCP (2020–21)</li>
+            </ul>
+          </div>
+          <div class="prisma-arrow">→</div>
+        </div>
+        <div class="prisma-stage">
+          <div class="prisma-box">
+            <span class="prisma-kicker">Screening</span>
+            <span class="prisma-n">n = 3 wards</span>
+            <h4>Bedside pharmacy practice</h4>
+            <ul>
+              <li>Clinical Pharmacy Intern, 2016</li>
+              <li>Clinical Pharmacist, Believers Church MCH</li>
+              <li>NABH champion, Dept. of Pharmacy</li>
+            </ul>
+          </div>
+          <div class="prisma-arrow">→</div>
+        </div>
+        <div class="prisma-stage">
+          <div class="prisma-box">
+            <span class="prisma-kicker">Eligibility</span>
+            <span class="prisma-n">n = 4 programs</span>
+            <h4>Stewardship &amp; evidence training</h4>
+            <ul>
+              <li>Antifungal &amp; antimicrobial stewardship, CMC Vellore</li>
+              <li>Cochrane membership, GRADEpro, ICH-GCP</li>
+              <li>Clinical Research Associate, Probiot RCT</li>
+            </ul>
+          </div>
+          <div class="prisma-arrow">→</div>
+        </div>
+        <div class="prisma-stage">
+          <div class="prisma-box">
+            <span class="prisma-kicker">Included</span>
+            <span class="prisma-n">n = current role</span>
+            <h4>Guideline development, PGIMER</h4>
+            <ul>
+              <li>Project Research Scientist III, ACEBCH</li>
+              <li>Faculty for evidence synthesis workshops</li>
+              <li>WHO &amp; DHR guideline contributor</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section id="experience">
+    <div class="section-head reveal">
+      <span class="section-label">03 — Experience</span>
+      <h2>Where the work happened</h2>
+    </div>
+    <div class="timeline reveal">
+
+      <div class="tl-item current">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-role">Project Research Scientist III</span>
+            <span class="tl-date">Apr 2025 — Present</span>
+          </div>
+          <div class="tl-org">PGIMER Chandigarh · Technical Resources Hub, Dept. of Pediatrics (ACEBCH)</div>
+          <ul>
+            <li>Review evidence for antibiotic guidelines across infectious diseases, on behalf of Technical Resource Centres</li>
+            <li>Run workshops and serve as faculty for evidence synthesis &amp; guideline development training</li>
+            <li>Drafted the introductory chapter of the DHR SOP for evidence synthesis</li>
+            <li>Authored the "Systematic Reviews and Meta-Analysis" chapter in <em>The Art &amp; Science of Writing a Scientific Paper</em> (Indian Pediatrics)</li>
+          </ul>
+          <div class="tl-sub">
+            <div class="tl-sub-title">Ongoing projects</div>
+            <p style="margin:0;font-size:14px;color:var(--ink-soft);">DHR Epilepsy Guidelines · DHR Guidelines on Cough Syrups</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-role">Clinical Pharmacist &amp; Systematic Reviewer</span>
+            <span class="tl-date">Jan 2022 — Apr 2025</span>
+          </div>
+          <div class="tl-org">Christian Medical College (CMC), Vellore · Dept. of Infectious Diseases (IDTRC)</div>
+          <ul>
+            <li>Ran an antifungal stewardship program for immunocompromised hematology patients — presented at IDWeek 2022 (Open Forum Infectious Diseases)</li>
+            <li>Conducted a Point Prevalence Survey of antibiotic consumption across CMC Vellore's Ranipet campus (Sept 2023), laying groundwork for syndrome-based stewardship</li>
+            <li>Coordinated the Fellowship in AMSP program, mentoring 4 pharmacist cohorts and securing a competitive salary grant</li>
+            <li>Writing committee member, WHO Echinococcosis guidelines (published June 2025)</li>
+            <li>Communication Officer, READ-It collaboration (CMC · Liverpool School of Tropical Medicine · Cochrane Infectious Diseases Group) — COVID-19 evidence synthesis</li>
+          </ul>
+          <div class="tl-sub">
+            <div class="tl-sub-title">Concurrent: Clinical Research Associate (2021–24)</div>
+            <p style="margin:0 0 8px;font-size:14px;color:var(--ink-soft);">Probiot Study — a Phase 2b RCT on peri-transplant probiotics in allogeneic stem cell recipients. Wrote the protocol, secured a ₹1.5L Fluid Research Grant, ran IRB/DSMB meetings, and managed data collection and cleaning. Presented at ECCMID 2025.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-role">Fellow in Antimicrobial Stewardship</span>
+            <span class="tl-date">Nov 2020 — Nov 2021</span>
+          </div>
+          <div class="tl-org">Christian Medical College &amp; Hospital, Vellore · IDTRC</div>
+          <ul>
+            <li>First fellow of India's post-Pharm.D. Infectious Diseases fellowship program</li>
+            <li>Delivered antimicrobial stewardship across medical and surgical wards</li>
+            <li>Implemented antifungal stewardship within the Department of Hematology</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-role">Clinical Pharmacist</span>
+            <span class="tl-date">Dec 2016 — Nov 2020</span>
+          </div>
+          <div class="tl-org">Believers Church Medical College Hospital, Thiruvalla · Dept. of Pharmacy</div>
+          <ul>
+            <li>Medication management across internal medicine, respiratory medicine and surgical departments</li>
+            <li>Served as NABH champion for the Department of Pharmacy</li>
+            <li>Includes a 6-month maternity break (May–Nov 2017)</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== RESEARCH / PUBLICATIONS ===================== -->
+  <section id="research">
+    <div class="section-head reveal">
+      <span class="section-label">04 — Research</span>
+      <h2>Selected publications</h2>
+      <p>15 peer-reviewed publications spanning systematic reviews, RCTs, and guideline development. Full list available on ORCID and Scopus.</p>
+    </div>
+    <div class="pub-list reveal">
+
+      <div class="pub">
+        <div class="pub-num">01</div>
+        <div>
+          <div class="pub-title">Early vs. delayed empiric antimicrobial treatment for suspected acute meningitis — a systematic review and meta-analysis</div>
+          <div class="pub-meta">Thampy A, Alexander H, John JM, John JS, et al. · BMC Infectious Diseases, Feb 2026</div>
+          <div class="pub-tags"><span class="pub-tag">Meta-analysis</span><span class="pub-tag">Meningitis</span></div>
+          <a class="pub-link" href="https://doi.org/10.1186/s12879-026-12858-x" target="_blank" rel="noopener">View DOI ↗</a>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-num">02</div>
+        <div>
+          <div class="pub-title">Therapeutic versus non-therapeutic dose anticoagulation in COVID-19 infection: a systematic review and meta-analysis of RCTs</div>
+          <div class="pub-meta">Selvarajan S, John JS, Tharyan P, et al. · eJHaem, 2025</div>
+          <div class="pub-tags"><span class="pub-tag">Meta-analysis</span><span class="pub-tag">COVID-19</span></div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-num">03</div>
+        <div>
+          <div class="pub-title">A study on the effectiveness of an antifungal stewardship program in immunocompromised patients: The Antifungal Stewardship (TAFS) study</div>
+          <div class="pub-meta">Jacob A, John JS, Alexander H, et al. · Indian Journal of Medical Microbiology, 2025</div>
+          <div class="pub-tags"><span class="pub-tag gold">Original research</span><span class="pub-tag">Antifungal stewardship</span></div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-num">04</div>
+        <div>
+          <div class="pub-title">WHO guidelines for the treatment of patients with cystic echinococcosis <span class="mono" style="font-size:12px;color:var(--ink-soft);">(drafting member)</span></div>
+          <div class="pub-meta">World Health Organization, Geneva, 2025 · Licence CC BY-NC-SA 3.0 IGO</div>
+          <div class="pub-tags"><span class="pub-tag gold">WHO Guideline</span></div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-num">05</div>
+        <div>
+          <div class="pub-title">WHO guidelines on meningitis diagnosis, treatment and care: executive summary <span class="mono" style="font-size:12px;color:var(--ink-soft);">(evidence synthesis)</span></div>
+          <div class="pub-meta">World Health Organization, Geneva, 2025</div>
+          <div class="pub-tags"><span class="pub-tag gold">WHO Guideline</span></div>
+          <a class="pub-link" href="https://doi.org/10.2471/B09452" target="_blank" rel="noopener">View DOI ↗</a>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-num">06</div>
+        <div>
+          <div class="pub-title">The India brain infections guidelines project: global evidence for local application</div>
+          <div class="pub-meta">Rupali P, Singh B, Princy NG, John JS, et al. · Clinical Epidemiology and Global Health, 2024</div>
+          <div class="pub-tags"><span class="pub-tag">Guideline development</span></div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-num">07</div>
+        <div>
+          <div class="pub-title">Favipiravir for treating COVID-19</div>
+          <div class="pub-meta">Korula P, Alexander H, John JS, et al. · Cochrane Database of Systematic Reviews, 2022 &amp; updated 2024</div>
+          <div class="pub-tags"><span class="pub-tag gold">Cochrane Review</span></div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-num">08</div>
+        <div>
+          <div class="pub-title">Evaluation of remdesivir on outcomes of hospitalized COVID-19 patients in a tertiary-care hospital in southern India</div>
+          <div class="pub-meta">Alexander H, Gunasekaran K, John JS, et al. · Journal of Infection in Developing Countries, 2023</div>
+          <div class="pub-tags"><span class="pub-tag">Cohort study</span></div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-num">09</div>
+        <div>
+          <div class="pub-title">India COVID guidelines: anticoagulation, azithromycin &amp; favipiravir working groups</div>
+          <div class="pub-meta">Covid Management Guidelines India Group, 2021–2022</div>
+          <div class="pub-tags"><span class="pub-tag">National guideline</span></div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-num">10</div>
+        <div>
+          <div class="pub-title">Effect of clinical pharmacist–provided patient counselling on glycemic control after CABG / PTCA</div>
+          <div class="pub-meta">John JS, Suresh M, Kuriakose NR, et al. · World Journal of Pharmacy and Pharmaceutical Sciences, 2016</div>
+          <div class="pub-tags"><span class="pub-tag">Clinical pharmacy</span></div>
+        </div>
+      </div>
+
+    </div>
+    <p style="margin-top:8px;font-size:13.5px;color:var(--ink-soft);">+ 5 further publications on etiological factors, quality-of-life outcomes, and comorbidity management in cardiac intervention patients. See <a href="https://orcid.org/0000-0002-9025-9678" target="_blank" rel="noopener" style="color:var(--coral);font-weight:600;text-decoration:none;">full ORCID record ↗</a>.</p>
+  </section>
+
+  <!-- ===================== GUIDELINES / GLOBAL WORK ===================== -->
+  <section id="guidelines">
+    <div class="section-head reveal">
+      <span class="section-label">05 — Global reach</span>
+      <h2>Guidelines &amp; collaborations</h2>
+      <p>Evidence synthesis work that fed into national and international clinical guidance.</p>
+    </div>
+    <div class="guide-grid reveal">
+      <div class="guide-card">
+        <div class="guide-icon">⊕</div>
+        <h4>WHO Cystic Echinococcosis Guidelines</h4>
+        <p>Drafting committee member for global treatment recommendations on this neglected tropical disease.</p>
+        <span class="yr">2025 · WHO NTD Dept.</span>
+      </div>
+      <div class="guide-card">
+        <div class="guide-icon">⊕</div>
+        <h4>WHO Meningitis Roadmap</h4>
+        <p>Evidence synthesis contributor to the "Defeating Meningitis by 2030" diagnosis &amp; care guidelines.</p>
+        <span class="yr">2025</span>
+      </div>
+      <div class="guide-card">
+        <div class="guide-icon">⊕</div>
+        <h4>India Brain Infections Guidelines</h4>
+        <p>Global evidence adapted for local application, in partnership with CMC Vellore and international collaborators.</p>
+        <span class="yr">2024</span>
+      </div>
+      <div class="guide-card">
+        <div class="guide-icon">⊕</div>
+        <h4>DHR Technical Resource Centre</h4>
+        <p>Ongoing antibiotic guideline development for India's Department of Health Research, including epilepsy and cough syrup guidance.</p>
+        <span class="yr">2025 — ongoing</span>
+      </div>
+      <div class="guide-card">
+        <div class="guide-icon">⊕</div>
+        <h4>India COVID-19 Guidelines</h4>
+        <p>Contributor to anticoagulation, antiviral and azithromycin working groups during the national pandemic response.</p>
+        <span class="yr">2021–2022</span>
+      </div>
+      <div class="guide-card">
+        <div class="guide-icon">⊕</div>
+        <h4>Cochrane Infectious Diseases Group</h4>
+        <p>Member since 2022; co-author on Cochrane's Favipiravir review; communication officer for the READ-It collaboration.</p>
+        <span class="yr">2022 — ongoing</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS ===================== -->
+  <section id="skills">
+    <div class="section-head reveal">
+      <span class="section-label">06 — Toolkit</span>
+      <h2>What I work with</h2>
+    </div>
+    <div class="skill-groups reveal">
+      <div class="skill-group">
+        <h4>Evidence Synthesis</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">GRADEpro GDT</span>
+          <span class="skill-tag">Rayyan</span>
+          <span class="skill-tag">Covidence</span>
+          <span class="skill-tag">RevMan</span>
+          <span class="skill-tag">Qualitative synthesis</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Clinical Research</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Protocol writing</span>
+          <span class="skill-tag">REDCap</span>
+          <span class="skill-tag">Epi-Info</span>
+          <span class="skill-tag">SPSS</span>
+          <span class="skill-tag">RStudio</span>
+          <span class="skill-tag">IRB / DSMB</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Clinical Practice</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Antimicrobial stewardship</span>
+          <span class="skill-tag">DDD / DOT calculation</span>
+          <span class="skill-tag">Medication therapy mgmt</span>
+          <span class="skill-tag">ADR monitoring</span>
+          <span class="skill-tag">NABH standards</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CERTS & HONORS ===================== -->
+  <section id="honors">
+    <div class="section-head reveal">
+      <span class="section-label">07 — Record</span>
+      <h2>Certifications &amp; honors</h2>
+    </div>
+    <div class="two-col reveal">
+      <div>
+        <h4 style="font-size:15px;margin-bottom:16px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:0.04em;font-family:'Space Mono',monospace;">Licenses &amp; Certifications</h4>
+        <ul class="list-clean">
+          <li><span class="li-badge">✓</span><div><span class="lbl">Registered Pharmacist</span> — Kerala State Pharmacy Council (Reg. No. 59717)</div></li>
+          <li><span class="li-badge">✓</span><div><span class="lbl">Cochrane Member</span> — since May 2022</div></li>
+          <li><span class="li-badge">✓</span><div><span class="lbl">CIDS-India</span> — Lifetime member</div></li>
+          <li><span class="li-badge">✓</span><div><span class="lbl">ICH GCP E6(R2)</span> — The Global Health Network</div></li>
+          <li><span class="li-badge">✓</span><div><span class="lbl">US GRADEpro Workshop</span> — IDSA, ID Week 2022</div></li>
+          <li><span class="li-badge">✓</span><div><span class="lbl">IELTS Academic</span> — Overall 7.5 (Listening 8.0)</div></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-size:15px;margin-bottom:16px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:0.04em;font-family:'Space Mono',monospace;">Honors &amp; Recognition</h4>
+        <ul class="list-clean">
+          <li><span class="li-badge">★</span><div><span class="lbl">IDWeek Trainee Award</span> — Infectious Diseases Society of America, 2021</div></li>
+          <li><span class="li-badge">★</span><div><span class="lbl">2nd Best Oral Presentation</span> — Cochrane India Network Conference, KGMU Lucknow, 2023</div></li>
+          <li><span class="li-badge">★</span><div><span class="lbl">Founding Member</span> — Centre for Guideline Development, CMC Vellore (inaugurated by Prof. Paul Garner, 2023)</div></li>
+          <li><span class="li-badge">★</span><div><span class="lbl">Workshop Preceptor</span> — CIDSCON "AMS for Beginners" 2023 &amp; 2024, ID Congress 2022</div></li>
+          <li><span class="li-badge">★</span><div><span class="lbl">A-grade, Kerala State Science Fair</span> — Trigonometry project (an early sign the data-and-diagrams habit started young)</div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact">
+    <div class="cta-section reveal">
+      <span class="section-label" style="color:var(--gold);">08 — Get in touch</span>
+      <h2>Have a guideline, review, or study<br>that needs evidence behind it?</h2>
+      <p>I'm always glad to talk systematic reviews, antimicrobial stewardship, or guideline development — whether that's a collaboration, a speaking invite, or just a good methods debate.</p>
+      <div class="cta-links">
+        <a class="primary" href="mailto:jishasarajohn@gmail.com">jishasarajohn@gmail.com</a>
+        <a href="https://www.linkedin.com/in/drjishasarajohn/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://orcid.org/0000-0002-9025-9678" target="_blank" rel="noopener">ORCID</a>
+        <a href="https://www.researchgate.net/profile/Jisha-John-5" target="_blank" rel="noopener">ResearchGate</a>
+        <a href="https://cmcvellore.academia.edu/DrJishaSaraJohn" target="_blank" rel="noopener">Academia.edu</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<footer>
+  <p>Dr. Jisha Sara John, Pharm D · Scopus Author ID 57672519900 · Built with evidence, not templates.</p>
+</footer>
+
+<script>
+  // scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el=> io.observe(el));
+
+  // smooth active state (simple)
+  document.querySelectorAll('.nav-links a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', function(e){
+      const id = this.getAttribute('href');
+      const target = document.querySelector(id);
+      if(target){
+        e.preventDefault();
+        target.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
